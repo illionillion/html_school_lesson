@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>WEBデザイン基礎（第5回）</title>
+    <style>
+        ul{
+            list-style-image: url("../image/listmark.gif");
+            list-style-position: inside;
+        }
+        ul.square{
+            list-style-type: square;
+            list-style-image: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>WEBデザイン基礎（第5回）</h1>
+    <h2>順序なしリスト</h2>
+    <!-- <ul></ul>までが番号なしリスト -->
+    <ul>
+        <li>サンプルテキスト</li>
+        <li>サンプルテキスト</li>
+        <li>サンプルテキスト</li>
+    </ul>
+
+    <h2>番号付きリスト</h2>
+    <!-- <ol></ol>までが番号付きリスト -->
+    <ol>
+        <li>サンプルテキスト</li>
+        <li>サンプルテキスト</li>
+        <li>サンプルテキスト</li>
+    </ol>
+    
+    <ol start="5">
+        <li>サンプルテキスト</li>
+        <li>サンプルテキスト</li>
+        <li>サンプルテキスト</li>
+    </ol>
+
+    <h2>定義リスト</h2>
+    <!-- データ定義 -->
+    <dl>
+        <dt>用語</dt>
+        <dd>用語の解説文</dd>
+        <dt>用語</dt>
+        <dd>用語の解説文</dd>
+    </dl>
+
+    <!-- <ul>要素の内容として<ol>要素をネストする -->
+    <ul class="square">
+        <li>好きな果物</li>
+        <ol>
+            <li>桃</li>
+            <li>ぶどう</li>
+            <li>スイカ</li>
+        </ol>
+        <li>好きな動物</li>
+        <ol>
+            <li>ペンギン</li>
+            <li>イルカ</li>
+            <li>犬</li>
+        </ol>
+    </ul>
+</body>
+</html>
