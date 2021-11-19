@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>WEBデザイン基礎（第5回）</title>
-    <style>
+    <link rel="stylesheet" href="../css/style1.css">
+    <!-- <style>
         ul{
             list-style-image: url("../image/listmark.gif");
             list-style-position: inside;
@@ -12,7 +13,7 @@
             list-style-type: square;
             list-style-image: none;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <h1>WEBデザイン基礎（第5回）</h1>
@@ -23,21 +24,20 @@
         <li>サンプルテキスト</li>
         <li>サンプルテキスト</li>
     </ul>
-
+    <ul id="img">
+            <li>サンプルテキスト</li>
+            <li>サンプルテキスト</li>
+            <li>サンプルテキスト</li>
+    </ul>
+    <br>
     <h2>番号付きリスト</h2>
     <!-- <ol></ol>までが番号付きリスト -->
-    <ol>
-        <li>サンプルテキスト</li>
-        <li>サンプルテキスト</li>
-        <li>サンプルテキスト</li>
-    </ol>
-    
     <ol start="5">
         <li>サンプルテキスト</li>
         <li>サンプルテキスト</li>
         <li>サンプルテキスト</li>
     </ol>
-
+    <br>
     <h2>定義リスト</h2>
     <!-- データ定義 -->
     <dl>
@@ -46,9 +46,9 @@
         <dt>用語</dt>
         <dd>用語の解説文</dd>
     </dl>
-
+    <br>
     <!-- <ul>要素の内容として<ol>要素をネストする -->
-    <ul class="square">
+    <ul>
         <li>好きな果物</li>
         <ol>
             <li>桃</li>
