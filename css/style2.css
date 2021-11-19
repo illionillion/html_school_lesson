@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Dcument */
+table{
+    border: 1px solid #f00;
+    text-align: center;
+    border-collapse: collapse;/*ボーダーを重ねて表示する*/
+}
+
+/* 「,（カンマ）」で区切って複数のセレクタを指定しています。 */
+th,td{
+    border: 1px solid #00f;
+    font-size: 12px;
+    padding: 7px;
+}
+
+th{
+    background: #e6eaff;
+}
