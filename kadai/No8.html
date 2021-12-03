@@ -2,9 +2,78 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>テンプレート</title>
+    <title>WEBデザイン基礎（第8回）</title>
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 <body>
-    
+    <header>
+        <h1>WEBデザイン基礎（第8回）</h1>
+        <h2>HTML5でセマンテックなWebページを構築する</h2>
+        <p>CSSでデザインもグッと素敵にしてみよう！</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">MENU1</a></li>
+            <li><a href="#">MENU2</a></li>
+            <li><a href="#">MENU3</a></li>
+            <li><a href="#">SITE MAP</a></li>
+            <li><a href="#">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <section>
+            <h1>セクション要素</h1>
+            <p>「セクション」とは、仕切り、部分、節、項などのかたまり、まとまりのことを指します。<br>
+            HTML5では、セクションを明示的に指定する新要素が加わりました。</p>
+        </section>
+        <section>
+            <h2>&lt;nav&gt;要素</h2>
+            <p>主要なナビゲーションとなるセクションのみを指定するのに適しています。</p>
+        </section>
+        <section>
+            <h2>&lt;article&gt;要素</h2>
+            <p>内容が単体で完結するセクションであることを示す際に使用します。</p>
+        </section>
+        <section>
+            <h2>&lt;aside&gt;要素</h2>
+            <p>その部分がWebページ内における余談・補足情報のセクションであることを示す際に使用します。</p>
+        </section>
+        <section>
+            <h2>&lt;section&gt;要素</h2>
+            <p>一般的なセクションを指定する際に使用します。<br>
+            セクションは、その部分の意味を表す見出しを付けることができるような意味的まとまりなので、単なるグループ化の目的で使用してはいけません<br>
+            レイアウトなどのために内容をグループ化する際には&lt;div&gt;要素を使用します。</p>
+        </section>
+    </article>
+
+    <aside>
+        <section>
+            <h1>カテゴリー</h1>
+            <ul>
+                <li>カテゴリー1</li>
+                <li>カテゴリー2</li>
+                <li>カテゴリー3</li>
+                <li>カテゴリー4</li>
+                <li>カテゴリー5</li>
+            </ul>
+        </section>
+        <section>
+            <h1>最新記事</h1>
+            <ul>
+                <li>最新記事1</li>
+                <li>最新記事2</li>
+                <li>最新記事3</li>
+                <li>最新記事4</li>
+                <li>最新記事5</li>
+            </ul>
+        </section>
+    </aside>
+    <footer>
+        Copyright © 2019 <a href="#" target="_blank">WEBデザイン基礎</a> All Rights Reserved.
+        <address>by : <a href="#" target="_blank">joho★osaka</a></address>
+    </footer>
 </body>
 </html>

@@ -2,9 +2,63 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>テンプレート</title>
+    <title>WEBデザイン基礎（第7回）</title>
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 <body>
-    
+    <header>
+        <h1>WEBデザイン基礎（第7回）</h1>
+        <h2>HTML5のセクション要素について</h2>
+        <p>セクション要素&lt;article&gt;&lt;aside&gt;&lt;section&gt;を使ってWebページを作成しよう！</p>
+    </header>
+
+    <article>
+        <section>
+            <h1>セクション要素</h1>
+            <p>「セクション」とは、仕切り、部分、節、項などのかたまり、まとまりのことを指します。<br>
+            HTML5では、セクションを明示的に指定する新要素が加わりました。</p>
+        </section>
+        <section>
+            <h2>&lt;nav&gt;要素</h2>
+            <p>主要なナビゲーションとなるセクションのみを指定するのに適しています。</p>
+        </section>
+        <section>
+            <h2>&lt;article&gt;要素</h2>
+            <p>内容が単体で完結するセクションであることを示す際に使用します。</p>
+        </section>
+        <section>
+            <h2>&lt;aside&gt;要素</h2>
+            <p>その部分がWebページ内における余談・補足情報のセクションであることを示す際に使用します。</p>
+        </section>
+        <section>
+            <h2>&lt;section&gt;要素</h2>
+            <p>一般的なセクションを指定する際に使用します。<br>
+            セクションは、その部分の意味を表す見出しを付けることができるような意味的まとまりなので、単なるグループ化の目的で使用してはいけません<br>
+            レイアウトなどのために内容をグループ化する際には&lt;div&gt;要素を使用します。</p>
+        </section>
+    </article>
+
+    <aside>
+        <section>
+            <h1>カテゴリー</h1>
+            <ul>
+                <li>カテゴリー1</li>
+                <li>カテゴリー2</li>
+                <li>カテゴリー3</li>
+                <li>カテゴリー4</li>
+                <li>カテゴリー5</li>
+            </ul>
+        </section>
+        <section>
+            <h1>最新記事</h1>
+            <ul>
+                <li>最新記事1</li>
+                <li>最新記事2</li>
+                <li>最新記事3</li>
+                <li>最新記事4</li>
+                <li>最新記事5</li>
+            </ul>
+        </section>
+    </aside>
 </body>
 </html>
