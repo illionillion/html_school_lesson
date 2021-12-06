@@ -2,9 +2,38 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>テンプレート</title>
+    <title>WEBデザイン基礎（第9回）</title>
+    <style>div{font: 120%em;}</style>
 </head>
 <body>
-    
+    <h1>WEBデザイン基礎（第9回）</h1>
+    <h2>HTMLフォームでアンケートを取ろう</h2>
+    <form action="php/sample.php" method="post">
+        <p>
+            <label for=""><div>最近おもしろいと思ったこWEBサイト・アプリ・コンテンツは？</div></label>
+            <input type="text" name="favorite" id="" class="txtfiled" size="30" placeholder="正確な名前じゃなくてもOK">
+        </p>
+        <p>
+            <label for=""><div>そのおもしろいポイントを教えてください</div></label>
+            <input type="text" name="comment" id="" class="txtfiled" size="40" rows="4" maxlength="100">
+        </p>
+        <p>
+            <div>あなたの興味のあるジャンルを教えてください（複数可）</div>
+            <span class="check">
+                <label for=""><input type="checkbox" name="genre[]" id="" value="映画・ドラマ">映画・ドラマ</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="音楽">音楽</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="ゲーム">ゲーム</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="アイドル">アイドル</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="お笑い">お笑い</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="動物">動物</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="素人投稿系">素人投稿系</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="ニュース">ニュース</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="ショッピング">ショッピング</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="料理レシピ">料理レシピ</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="ショップ情報">ショップ情報</label>
+                <label for=""><input type="checkbox" name="genre[]" id="" value="その他">その他</label>
+            </span>
+        </p>
+    </form>
 </body>
 </html>
