@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        #cnv{border: 1px solid #000;}
+    </style>
+    <script>
+
+        window.onload=function(){
+
+            const cnvs=document.getElementById("cnv");
+            const ctx=cnvs.getContext("2d");
+
+            let count=0;
+
+            let flag=true;
+
+            setInterval(() => {
+                ctx.clearRect(0, 0, cnvs.width, cnvs.height);
+                ctx.fillRect(count,50,100,100)
+
+                if (count>=cnvs.width-100) {
+                    flag=false;
+                }else if(count<=0){
+                    flag=true;
+                }
+
+                if (flag) {
+                    count++;
+                }else{
+                    count--;
+                }
+            
+            }, 1);
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <canvas id="cnv" width="600" height="400"></canvas>
+</body>
+</html>

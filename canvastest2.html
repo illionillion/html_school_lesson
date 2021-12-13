@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2</title>
+    <style>
+        #cnv{border: 1px solid #000;}
+    </style>
+    <script>
+
+        let data=0;
+
+        window.onload=function(){
+
+            document.getElementById("left_btn").onclick=function(){move(this)};
+            document.getElementById("right_btn").onclick=function(){move(this)};
+
+            const cnvs=document.getElementById("cnv");
+            const ctx=cnvs.getContext("2d");
+
+            if (data==0) {
+                data=cnvs.width/2;
+
+            }
+
+            setInterval(() => {
+                ctx.clearRect(0, 0, cnvs.width, cnvs.height);
+                ctx.fillRect(data,50,100,100)
+            }, 10);
+
+
+        }
+
+        function move(ele){
+            console.log(ele);
+            switch (ele.value) {
+                case "left":
+                    data-=10;
+                    console.log(data);
+                    break;
+            
+                case "right":
+                    data+=10;
+                    console.log(data);
+
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <canvas id="cnv" width="600" height="450">
+
+    </canvas>
+    <input type="button" id="left_btn" value="left">
+    <input type="button" id="right_btn" value="right">
+</body>
+</html>
