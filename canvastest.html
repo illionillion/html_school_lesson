@@ -15,24 +15,39 @@
             const cnvs=document.getElementById("cnv");
             const ctx=cnvs.getContext("2d");
 
-            let count=0;
+            let countX=0;
+            let countY=0;
 
-            let flag=true;
+            let flagX=true;
+            let flagY=true;
 
             setInterval(() => {
                 ctx.clearRect(0, 0, cnvs.width, cnvs.height);
-                ctx.fillRect(count,50,100,100)
+                ctx.fillStyle="red";
+                ctx.fillRect(countX,countY,20,20)
 
-                if (count>=cnvs.width-100) {
-                    flag=false;
-                }else if(count<=0){
-                    flag=true;
+                if (countX>=cnvs.width-20) {
+                    flagX=false;
+                }else if(countX<=0){
+                    flagX=true;
                 }
 
-                if (flag) {
-                    count++;
+                if (countY>=cnvs.height-20) {
+                    flagY=false;
+                }else if(countY<=0){
+                    flagY=true;
+                }
+
+                if (flagX) {
+                    countX++;
                 }else{
-                    count--;
+                    countX--;
+                }
+
+                if (flagY) {
+                    countY++;
+                }else{
+                    countY--;
                 }
             
             }, 1);
@@ -45,4 +60,4 @@
 <body>
     <canvas id="cnv" width="600" height="400"></canvas>
 </body>
-</html>
+</html
