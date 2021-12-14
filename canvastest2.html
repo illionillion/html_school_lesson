@@ -7,43 +7,143 @@
     <title>test2</title>
     <style>
         #cnv{border: 1px solid #000;}
+        #controller{text-align: center;}
+
+        /* #spantest{
+            position: relative;
+        } */
+
+        /* span{
+            background: red;
+            display: block;
+            width: 18px;
+            height: 18px;
+            position: relative;
+        }
+
+        span::after{
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            background-color: blue;
+            left: 20%;
+        } */
     </style>
     <script>
 
-        let data=0;
+        // let data=0;
+        let data={"x":0,"y":0};
+        let cnvs;
+
 
         window.onload=function(){
 
             document.getElementById("left_btn").onclick=function(){move(this)};
+            // document.getElementById("left_btn").onmousedown=function(){move(this)};
             document.getElementById("right_btn").onclick=function(){move(this)};
+            document.getElementById("up_btn").onclick=function(){move(this)};
+            document.getElementById("down_btn").onclick=function(){move(this)};
 
-            const cnvs=document.getElementById("cnv");
+            cnvs=document.getElementById("cnv");
             const ctx=cnvs.getContext("2d");
+            let countX=0;
+            let countY=(cnvs.height/2)/2;
 
-            if (data==0) {
-                data=cnvs.width/2;
+            let flagX=true;
+            let flagY=true;
+
+            if (data["x"]==0||data["y"]==0) {
+                data["x"]=cnvs.width/2;
+                data["y"]=cnvs.height/2;
 
             }
 
             setInterval(() => {
                 ctx.clearRect(0, 0, cnvs.width, cnvs.height);
-                ctx.fillRect(data,50,100,100)
+
+                ctx.fillStyle="red";
+                ctx.fillRect(countX,countY,20,20)
+
+                if (countX>=cnvs.width-20) {
+                    flagX=false;
+                }else if(countX<=0){
+                    flagX=true;
+                }
+
+                if (countY>=cnvs.height-20) {
+                    flagY=false;
+                }else if(countY<=0){
+                    flagY=true;
+                }
+
+                if (flagX) {
+                    countX+=2;
+                }else{
+                    countX-=2;
+                }
+
+                if (flagY) {
+                    countY+=2;
+                }else{
+                    countY-=2;
+                }
+
+                ctx.fillStyle="black";
+                ctx.fillRect(data["x"],data["y"],20,20)
+            
             }, 10);
 
-
+            document.body.addEventListener('keydown', event => {
+                
+                switch (event.key) {
+                    case "ArrowUp":
+                        move(document.getElementById("up_btn"));
+                        break;
+                    case "ArrowDown":
+                        move(document.getElementById("down_btn"));
+                        break;
+                    case "ArrowLeft":
+                        move(document.getElementById("left_btn"));
+                        break;
+                    case "ArrowRight":
+                        move(document.getElementById("right_btn"));
+                        break;
+                
+                    default:
+                        break;
+                }
+            });
         }
 
         function move(ele){
-            console.log(ele);
-            switch (ele.value) {
+            // console.log(ele);
+            console.log(data);
+            switch (ele.dataset.value) {
                 case "left":
-                    data-=10;
-                    console.log(data);
+                    console.log(data["x"]-10);
+                    if (data["x"]-10>=0) {
+                        data["x"]-=10;
+                    }
+
                     break;
             
                 case "right":
-                    data+=10;
-                    console.log(data);
+                    if (data["x"]+10<=cnvs.width-20) {
+                        data["x"]+=10;
+                    }
+
+                    break;
+
+                case "up":
+                    if (data["y"]-10>=0) {
+                        data["y"]-=10;
+                    }
+
+                    break;
+                case "down":
+                    if (data["y"]+10<=cnvs.height-20) {
+                        data["y"]+=10;
+                    }
 
                     break;
             
@@ -56,10 +156,16 @@
 </head>
 <body>
 
-    <canvas id="cnv" width="600" height="450">
+    <canvas id="cnv" width="600" height="550">
 
     </canvas>
-    <input type="button" id="left_btn" value="left">
-    <input type="button" id="right_btn" value="right">
+    <div id="controller">
+        <div><input type="button" id="up_btn" value="↑" data-value="up"></div>
+        <input type="button" id="left_btn" value="←" data-value="left">
+        <input type="button" id="right_btn" value="→" data-value="right">
+        <div><input type="button" id="down_btn" value="↓" data-value="down"></div>
+    </div>
+
+    <!-- <div id="spantest"><span onclick="alert('span')">a</span></div> -->
 </body>
 </html>
