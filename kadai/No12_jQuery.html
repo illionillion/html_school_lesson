@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>WEBデザイン基礎（第12回）</title>
+        <script src="js/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>WEBデザイン基礎（第12回）</h1>
+        <h2>jQueryの練習</h2>
+        <ul class="evenum">
+            <li>リスト項目-01（奇数行）</li>
+            <li>リスト項目-02（偶数行）</li>
+            <li>リスト項目-03（奇数行）</li>
+            <li>リスト項目-04（偶数行）</li>
+            <li>リスト項目-05（奇数行）</li>
+            <li>リスト項目-06（偶数行）</li>
+        </ul>
+        <!--JavaScriptで偶数行をシアン色にする-->
+        <!-- <script>
+            var children=document.querySelector(".evenum").children;
+                for(var i=0;i<children.length;i++){
+                    var child=children[i];
+                    if(i%2!=0){
+                        child.style.color="#0ff";
+                    }
+                }
+        </script> -->
+        <!--jQueryで偶数行をマゼンタ色にする-->
+        <script>
+            $(".evenum li:nth-child(even)").css("color","#f09");
+        </script>
+
+        <script>
+            $(function () {
+                // セレクタ：処理対象となるDOM要素を指定する記法　$("h1")の部分
+                // メソッド：処理
+                // メソッドチェーン：.css().hide()とメソッドを続けて記述すること
+                $("h1").css("color","red").hide("slow");
+            })
+        </script>
+
+        <ul id="main">
+            <li>0</li>
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li>3
+                <ul id="sub">
+                    <li>3-0</li>
+                    <li>3-1</li>
+                    <li class="item">3-2</li>
+                    <li class="item">3-3</li>
+                    <li>3-0</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            $(function(){
+                // セレクタ：メソッド
+                // $("")：セレクタの記法
+                // html要素　h1 p ul などを""の間に指定する
+                // id #main
+                // class .item
+                // $("#sub").css("color","red");
+                // $(".item").css("color","red");
+            })
+        </script>
+
+        <script>
+            $(function(){
+                // > 直下の子要素
+                //   それ以下の要素
+                // , 複数の要素
+                // + 隣接する要素
+                // $("#main > .item").css("color","red");
+                // $("#main .item").css("color","red");
+                // $("h2, .item").css("color","red");
+                $(".item + .item").css("color","red");
+
+            })
+        </script>
+
+        <div id="box" style="width: 100px;height: 100px;background: red;"></div>
+        <script>
+            $(function(){
+                // hide,show
+                // fadeOut,fadeIn
+                // toggle
+                // $("#box").hide(800);
+                // $("#box").fadeOut("slow");
+                $("#box").toggle(800);
+                $("#box").toggle(800);
+                $("#box").toggle(800);
+                $("#box").toggle(800);
+            })
+        </script>
+
+        <script>
+            $(function(){
+                // click
+                // mouseover, mouseout, mousemove
+                $("#box").click(function(){
+                    alert("hi!");
+                })
+                $("#box")
+                    .mouseover(function(){
+                        $(this).css("background","green");
+                    })
+                    .mouseout(function(){
+                        $(this).css("background","red");
+                    })
+                    .mousemove(function(e){
+                        $(this).text(e,pageX);
+                    })
+            })
+        </script>
+    </body>
+</html>

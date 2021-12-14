@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>WEBデザイン基礎（第12回）</title>
+        <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>WEBデザイン基礎（第12回）</h1>
+        <h2>jQuery_Challenge1</h2>
+        <p>ボタンをクリックすると、アラート画面が表示される（メッセージは何でもOK！）</p>
+        <button id="button0">アラート表示</button>
+        <script>
+            //ここに処理を記述
+            // window.onload=function(){
+            //     document.getElementById("#button0").onclick=function(){
+            //         alert("hello world");
+            //     }
+            // }
+            $(function(){
+                $("#button0").click(function(){
+                    alert("hello world");
+                })
+            })
+        </script>
+        <br>
+        <br>
+        <br>
+        <h2>jQuery_Challenge2</h2>
+        <p>h1要素にマウスポインタは入ったときに文字の色が変化し、
+            マウスポインタが出たときは元の色に戻る（色は何でもok!）</p>
+        <script>
+            //ここに処理を記述
+            $(function(){
+                $("h1").mouseover(function(){
+                    $(this).css("color","red");
+                }).mouseout(function () {
+                    $(this).css("color","black");
+                })
+            })
+        </script>
+        <br>
+        <h2>jQuery_Challenge3</h2>
+        <p>ボタンをクリックするとボックスの色が変化する</p>
+        <button id="button1">RED</button>
+        <button id="button2">GREEN</button>
+        <button id="button3">BLUE</button>
+        <br>
+        <br>
+        <div class="box" style="width: 60px;height: 60px;background: #000;"></div>
+        <script>
+            //ここに処理を記述
+            $(function () {
+                $("#button1").click(function(){
+                    $(".box").css("background-color","red");
+                })
+                $("#button2").click(function(){
+                    $(".box").css("background-color","green");
+                })
+                $("#button3").click(function(){
+                    $(".box").css("background-color","blue");
+                })
+            })
+        </script>
+    </body>
+</html>
+
